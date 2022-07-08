@@ -1,0 +1,385 @@
+openapi: 3.0.1
+info:
+  title: Open Data TAN
+  contact:
+    email: apiteam@swagger.io
+  version: 1.0.0
+servers:
+- url: http://open_preprod.tan.fr
+  description: PREPROD
+- url: http://open.tan.fr
+  description: PROD
+tags:
+- name: Arrets
+- name: Temps Attente
+paths:
+  /ewp/arrets.json/{latitude}/{longitude}:
+    get:
+      tags:
+      - Arrets
+      summary: Recherche arrets proche d'une latitude/longitude
+      operationId: getArretsLatitudeLongitude
+      parameters:
+      - name: latitude
+        in: path
+        description: Latitude
+        required: true
+        schema:
+          type: string
+        example: 47,264
+      - name: longitude
+        in: path
+        description: Longitude
+        required: true
+        schema:
+          type: string
+        example: -1,585
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ArretsLatLong'
+  /ewp/arrets.json:
+    get:
+      tags:
+      - Arrets
+      summary: Liste de tous les arrets
+      operationId: getArrets
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ArretsLatLong'
+  /ewp/horairesarret.json/{codeArret}/{numLigne}/{sens}:
+    get:
+      tags:
+      - Arrets
+      summary: Horaires (théoriques)
+      operationId: getArretsHorairesTheoriques
+      parameters:
+      - name: codeArret
+        in: path
+        description: Code Arret
+        required: true
+        schema:
+          type: string
+        example: HBLI2
+      - name: numLigne
+        in: path
+        description: Numéro ligne
+        required: true
+        schema:
+          type: string
+        example: C5
+      - name: sens
+        in: path
+        description: Sens
+        required: true
+        schema:
+          type: string
+          enum: [1, 2]
+        example: 1
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HorairesTheoriquesArrets'
+  /ewp/horairesarret.json/{codeArret}/{numLigne}/{sens}/{date}:
+    get:
+      tags:
+      - Arrets
+      summary: Horaires (théoriques)
+      operationId: getArretsHorairesTheoriquesDate
+      parameters:
+      - name: codeArret
+        in: path
+        description: Code Arret
+        required: true
+        schema:
+          type: string
+        example: HBLI2
+      - name: numLigne
+        in: path
+        description: Numéro ligne
+        required: true
+        schema:
+          type: string
+        example: C5
+      - name: sens
+        in: path
+        description: Sens
+        required: true
+        schema:
+          type: string
+          enum: [1, 2]
+        example:
+      - name: date
+        in: path
+        description: Date
+        required: true
+        schema:
+          type: string
+        example: "2021-07-21"
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HorairesTheoriquesArrets'
+  /ewp/tempsattente.json/{codeArret}:
+    get:
+      tags:
+      - Temps Attente
+      summary: Temps attente pour un lieu ou arret
+      operationId: getTempsAttente
+      parameters:
+      - name: codeArret
+        in: path
+        description: Code lieu ou code arret
+        required: true
+        schema:
+          type: string
+        example: HBLI
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TempsAttente'
+  /ewp/tempsattentelieu.json/{codeArret}/{nombrePassages}:
+    get:
+      tags:
+      - Temps Attente
+      summary: Temps attente pour un lieu ou arret et un nombre de passages
+      operationId: getTempsAttentePassage
+      parameters:
+      - name: codeArret
+        in: path
+        description: Code lieu ou code arret
+        required: true
+        schema:
+          type: string
+        example: HBLI
+      - name: nombrePassages
+        in: path
+        description: Nombre de passages
+        required: true
+        schema:
+          type: integer
+        example: 1
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TempsAttente'
+  /ewp/tempsattentelieu.json/{codeArret}/{nombrePassages}/{numLigne}:
+    get:
+      tags:
+      - Temps Attente
+      summary: Temps attente pour un lieu ou arret, un nombre de passages et un numéro de ligne
+      operationId: getTempsAttentePassageLigne
+      parameters:
+      - name: codeArret
+        in: path
+        description: Code lieu ou code arret
+        required: true
+        schema:
+          type: string
+        example: HBLI
+      - name: nombrePassages
+        in: path
+        description: Nombre de passages
+        required: true
+        schema:
+          type: integer
+        example: 1
+      - name: numLigne
+        in: path
+        description: Numéro de ligne
+        required: true
+        schema:
+          type: string
+        example: C5
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TempsAttente'
+components:
+  schemas:
+    ArretsLatLong:
+      type: object
+      properties:
+        codeLieu:
+          type: string
+        libelle:
+          type: string
+        distance:
+          type: string
+        ligne:
+          type: array
+          items:
+            type: object
+            properties:
+              numLigne:
+                type: string
+            required:
+            - numLigne
+      required:
+      - codeLieu
+      - libelle
+      - distance
+      - ligne
+    HorairesTheoriquesArrets:
+      type: object
+      properties:
+        ligne:
+          type: object
+          properties:
+            numLigne:
+              type: string
+            typeligne:
+              type: integer
+            directionSens1:
+              type: string
+            directionSens2:
+              type: string
+            accessible:
+              type: string
+            etatTrafic:
+              type: integer
+          required:
+          - numLigne
+          - typeligne
+          - directionSens1
+          - directionSens2
+          - accessible
+          - etatTrafic
+        arret:
+          type: object
+          properties:
+            codeArret:
+              type: string
+            libelle:
+              type: string
+            accessible:
+              type: boolean
+          required:
+          - codeArret
+          - libelle
+          - accessible
+        codeCouleur:
+          type: string
+        notes:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+              libelle:
+                type: string
+            required:
+            - code
+            - libelle
+        horaires:
+          type: array
+          items:
+            type: object
+            properties:
+              heure:
+                type: string
+              passages:
+                type: array
+                items:
+                  type: string
+            required:
+            - heure
+            - passages
+        prochainsHoraires:
+          type: array
+          items:
+            type: object
+            properties:
+              heure:
+                type: string
+              passages:
+                type: array
+                items:
+                  type: string
+            required:
+            - heure
+            - passages
+        plageDeService:
+          type: string
+      required:
+      - ligne
+      - arret
+      - codeCouleur
+      - notes
+      - horaires
+      - prochainsHoraires
+      - plageDeService
+    TempsAttente:
+        type: object
+        properties:
+          sens:
+            type: integer
+          terminus:
+            type: string
+          infotrafic:
+            type: boolean
+          temps:
+            type: string
+          dernierDepart:
+            type: string
+          tempsReel:
+            type: string
+          ligne:
+            type: object
+            properties:
+              numLigne:
+                type: string
+              typeLigne:
+                type: integer
+            required:
+            - numLigne
+            - typeLigne
+          arret:
+            type: object
+            properties:
+              codeArret:
+                type: string
+            required:
+            - codeArret
+        required:
+        - sens
+        - terminus
+        - infotrafic
+        - temps
+        - dernierDepart
+        - tempsReel
+        - ligne
+        - arret

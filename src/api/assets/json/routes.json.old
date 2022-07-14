@@ -54,78 +54,6 @@
     "route_text_color": "ffffff"
   },
   {
-    "route_id": "C1-0",
-    "route_short_name": "C1",
-    "route_long_name": "Haluchère-Batignolles - Gare de Chantenay",
-    "route_desc": "",
-    "route_type": 3,
-    "route_color": "34b4e4",
-    "route_text_color": "ffffff"
-  },
-  {
-    "route_id": "C2-0",
-    "route_short_name": "C2",
-    "route_long_name": "Le Cardo - Gare Sud",
-    "route_desc": "",
-    "route_type": 3,
-    "route_color": "ed7703",
-    "route_text_color": "ffffff"
-  },
-  {
-    "route_id": "C3-0",
-    "route_short_name": "C3",
-    "route_long_name": "Armor - Bd de Doulon",
-    "route_desc": "",
-    "route_type": 3,
-    "route_color": "f8b323",
-    "route_text_color": "000000"
-  },
-  {
-    "route_id": "C4-0",
-    "route_short_name": "C4",
-    "route_long_name": "Les Sorinières - Greneraie",
-    "route_desc": "",
-    "route_type": 3,
-    "route_color": "77ad1c",
-    "route_text_color": "ffffff"
-  },
-  {
-    "route_id": "C6-0",
-    "route_short_name": "C6",
-    "route_long_name": "Chantrerie Grandes Ecoles - Hermeland",
-    "route_desc": "",
-    "route_type": 3,
-    "route_color": "beabd0",
-    "route_text_color": "ffffff"
-  },
-  {
-    "route_id": "C7-0",
-    "route_short_name": "C7",
-    "route_long_name": "Trianon / Clairais - Souillarderie",
-    "route_desc": "",
-    "route_type": 3,
-    "route_color": "cbd300",
-    "route_text_color": "000000"
-  },
-  {
-    "route_id": "C9-0",
-    "route_short_name": "C9",
-    "route_long_name": "Basse Goulaine / Chalonges - Pirmil",
-    "route_desc": "",
-    "route_type": 3,
-    "route_color": "F5B8C6",
-    "route_text_color": "000000"
-  },
-  {
-    "route_id": "C20-0",
-    "route_short_name": "C20",
-    "route_long_name": "Ecole Centrale-Audencia - Gare de Chantenay",
-    "route_desc": "",
-    "route_type": 3,
-    "route_color": "F8EA22",
-    "route_text_color": "000000"
-  },
-  {
     "route_id": "10-0",
     "route_short_name": "10",
     "route_long_name": "Gare de Chantenay - Bd de Doulon",
@@ -826,6 +754,78 @@
     "route_type": 3,
     "route_color": "ffffff",
     "route_text_color": "e53138"
+  },
+  {
+    "route_id": "C1-0",
+    "route_short_name": "C1",
+    "route_long_name": "Haluchère-Batignolles - Gare de Chantenay",
+    "route_desc": "",
+    "route_type": 3,
+    "route_color": "34b4e4",
+    "route_text_color": "ffffff"
+  },
+  {
+    "route_id": "C2-0",
+    "route_short_name": "C2",
+    "route_long_name": "Le Cardo - Gare Sud",
+    "route_desc": "",
+    "route_type": 3,
+    "route_color": "ed7703",
+    "route_text_color": "ffffff"
+  },
+  {
+    "route_id": "C20-0",
+    "route_short_name": "C20",
+    "route_long_name": "Ecole Centrale-Audencia - Gare de Chantenay",
+    "route_desc": "",
+    "route_type": 3,
+    "route_color": "F8EA22",
+    "route_text_color": "000000"
+  },
+  {
+    "route_id": "C3-0",
+    "route_short_name": "C3",
+    "route_long_name": "Armor - Bd de Doulon",
+    "route_desc": "",
+    "route_type": 3,
+    "route_color": "f8b323",
+    "route_text_color": "000000"
+  },
+  {
+    "route_id": "C4-0",
+    "route_short_name": "C4",
+    "route_long_name": "Les Sorinières - Greneraie",
+    "route_desc": "",
+    "route_type": 3,
+    "route_color": "77ad1c",
+    "route_text_color": "ffffff"
+  },
+  {
+    "route_id": "C6-0",
+    "route_short_name": "C6",
+    "route_long_name": "Chantrerie Grandes Ecoles - Hermeland",
+    "route_desc": "",
+    "route_type": 3,
+    "route_color": "beabd0",
+    "route_text_color": "ffffff"
+  },
+  {
+    "route_id": "C7-0",
+    "route_short_name": "C7",
+    "route_long_name": "Trianon / Clairais - Souillarderie",
+    "route_desc": "",
+    "route_type": 3,
+    "route_color": "cbd300",
+    "route_text_color": "000000"
+  },
+  {
+    "route_id": "C9-0",
+    "route_short_name": "C9",
+    "route_long_name": "Basse Goulaine / Chalonges - Pirmil",
+    "route_desc": "",
+    "route_type": 3,
+    "route_color": "F5B8C6",
+    "route_text_color": "000000"
   },
   {
     "route_id": "E1-0",

@@ -2,35 +2,11 @@
  * Use case: after JSON conversion, run it when a new version of the CSV files is published by TAN/NM
  * Run: `node <this_script>.js`
  */
+import { Api_constants } from "./assets/api_constants.js"; // static methods
 
-const STOP_NAMES_WITH_HYPHEN = [
-  {
-    original: "Foch - Cathédrale",
-    formatted: "Foch-Cathédrale",
-  },
-  {
-    original: "Mendès France - Bellevue",
-    formatted: "Mendès France-Bellevue",
-  },
-  {
-    original: "Orvault - Morlière",
-    formatted: "Orvault-Morlière",
-  },
-  {
-    original: "Haluchère - Batignolles",
-    formatted: "Haluchère-Batignolles",
-  },
-  {
-    original: "Ecole Centrale - Audencia",
-    formatted: "Ecole Centrale-Audencia",
-  },
-  {
-    original: "Trentemoult - Roquios",
-    formatted: "Trentemoult-Roquios",
-  },
-];
+const STOP_NAMES_WITH_HYPHEN = Api_constants.getStopNamesWithHyphen(); // array of {original: string, formatted: string} objects
 
-var fs = require("fs");
+let fs = require("fs");
 
 const PATH_JSON_FILE = "./assets/json/routes.json";
 

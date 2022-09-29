@@ -1,49 +1,39 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import HorizontalBar from "../../../horizontalBar";
+import LineNumberIcon from "../../../lineNumberIcon";
+import Constants from "../../../constants";
+import { RFValue } from "react-native-responsive-fontsize";
+
+const PADDING_AROUND = Constants.PADDING_GLOBAL.SIDES;
+const FONT_VALUE = Constants.FONT_VALUES.TEXT;
 
 export default function LineCard(props) {
   /* props = {
-        fontSize : number,
         route : {
             route_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color
         }
     } */
-  const route = props.route;
-  const short_name = route.route_short_name;
-  const long_name_splitted = route.route_long_name.split(" - "); // remove annoying hyphen between the final stops
+  const long_name_splitted = props.route.route_long_name.split(" - "); // remove annoying hyphen between the final stops
   const long_name = long_name_splitted[0] + "\n" + long_name_splitted[1];
-  const route_text_color = route.route_text_color;
-  const route_color = route.route_color;
-  const fontSize = props.fontSize;
+
+  const _propsLineNumberIcon = {
+    line_number: props.route.route_short_name,
+    isRatio1by1: true,
+    iconTextSize: "large",
+  };
 
   return (
-    <View style={styles.container}>
-      <HorizontalBar paddingType={"paddingBottom"}></HorizontalBar>
-      <View
-        style={[
-          styles.lineRouteNumber,
-          {
-            backgroundColor: "#" + route_color,
-            borderColor: "rgba(0, 0, 0, 0.44)",
-            borderWidth: route_color === "ffffff" ? 1 : 0, // some routes have white background color
-          },
-        ]}
-      >
-        <Text
-          style={{
-            color: "#" + route_text_color,
-            fontSize: fontSize * 0.85,
-            fontWeight: "bold",
-          }}
-          adjustsFontSizeToFit={true} // TODO
-        >
-          {short_name}
-        </Text>
-      </View>
-      <View style={styles.lineRoute}>
-        <Text style={{ fontSize: fontSize * 0.85 }}>{long_name}</Text>
-      </View>
+    <View style={{ padding: PADDING_AROUND }}>
+      <TouchableOpacity>
+        <View style={styles.container}>
+          <LineNumberIcon {..._propsLineNumberIcon}></LineNumberIcon>
+
+          <View style={styles.lineRoute}>
+            <Text style={{ fontSize: RFValue(FONT_VALUE) }}>{long_name}</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
       <HorizontalBar paddingType={"paddingBottom"}></HorizontalBar>
     </View>
   );
@@ -51,23 +41,11 @@ export default function LineCard(props) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    padding: 10,
-  },
-  lineRouteNumber: {
-    width: 40,
-    height: 40,
-    alignItems: "center",
-    justifyContent: "center",
-    /* LAYOUT TESTS
-    borderColor: "#000000",
-    borderWidth: 1,*/
+    justifyContent: "space-around",
   },
   lineRoute: {
     flex: 10,
-    paddingLeft: 10,
+    paddingLeft: Constants.PADDING_GLOBAL.SIDES, // leave space between LineNumberIcon & text
     justifyContent: "center",
-    /* LAYOUT TESTS
-    borderColor: "#000000",
-    borderWidth: 1,*/
   },
 });

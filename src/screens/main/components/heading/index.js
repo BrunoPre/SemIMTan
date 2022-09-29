@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { RFPercentage } from "react-native-responsive-fontsize";
+import { RFValue } from "react-native-responsive-fontsize";
 import CONSTANTS from "./../constants.js";
 
-const FONT_PERCENTAGE = CONSTANTS.FONT_PERCENTAGES.HEADING;
+const FONT_VALUE = CONSTANTS.FONT_VALUES.HEADING;
 
 export default function Heading() {
+  /* Sem'imt'an */
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>
@@ -22,7 +23,7 @@ export default function Heading() {
 const styles = StyleSheet.create({
   heading: {
     color: "black",
-    fontSize: RFPercentage(FONT_PERCENTAGE),
+    fontSize: RFValue(FONT_VALUE),
     fontWeight: "bold",
   },
   h_green_darker: {

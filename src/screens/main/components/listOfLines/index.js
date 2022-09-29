@@ -1,28 +1,18 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import HorizontalBar from "../horizontalBar";
+import { StyleSheet, View } from "react-native";
 import LineCard from "./components/lineCard";
-import getRoutes from "../../../../api/helper";
 import CONSTANTS from "../constants";
-import { RFPercentage } from "react-native-responsive-fontsize";
+import { ApiHelper } from "../../../../api/helper";
 
-const FONT_PERCENTAGE = CONSTANTS.FONT_PERCENTAGES.SUBHEADING;
-
-const paddingValue = 20;
+const paddingValue = CONSTANTS.PADDING_GLOBAL.SIDES;
 
 export default function ListOfLines() {
-  const routes = getRoutes(); // array of objects
-
-  //console.log(routes);
-
-  function getHeadingFontSize() {
-    return StyleSheet.flatten(styles.heading).fontSize;
-  }
+  const apiHelper = new ApiHelper();
+  const routes = apiHelper.getRoutes(); // array of objects
 
   // for Array.map
   function buildLineCard(route_obj, index) {
     const commonProps = {
-      fontSize: getHeadingFontSize(),
       route: route_obj,
     };
     return <LineCard key={index} {...commonProps}></LineCard>;
@@ -32,24 +22,12 @@ export default function ListOfLines() {
     buildLineCard(route_obj, i)
   );
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Lignes</Text>
-      <HorizontalBar paddingType={"paddingBottom"}></HorizontalBar>
-      {routesToBeRendered}
-    </View>
-  );
+  return <View style={styles.container}>{routesToBeRendered}</View>;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: paddingValue,
-    //alignSelf: "stretch", // fill the screen's width as this is a child component
-  },
-  heading: {
-    color: "black",
-    fontSize: RFPercentage(FONT_PERCENTAGE),
-    fontWeight: "bold",
   },
 });

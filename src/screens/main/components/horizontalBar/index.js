@@ -1,9 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import Constants from "../constants";
 
-const paddingValue = 20;
+const paddingValue = Constants.PADDING_GLOBAL.BORDER;
 
 export default function HorizontalBar(props) {
+  /*
+    props = {
+        paddingType: string ("paddingBottom" | "paddingTop" | "")
+    }
+     */
   return <View style={styles(props.paddingType).horizontalBar} />;
 }
 const styles = (paddingType) =>
@@ -13,6 +19,5 @@ const styles = (paddingType) =>
       paddingBottom: paddingType === "paddingBottom" ? paddingValue : 0,
       borderBottomColor: "black",
       borderBottomWidth: StyleSheet.hairlineWidth,
-      //alignSelf: "stretch",
     },
   });

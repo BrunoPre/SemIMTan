@@ -74,8 +74,6 @@ const lastChronobusLine =
     _MAPPING_LINE_TYPE_TO_RANGE.chronobus.length - 1
   ];
 
-console.log(lastChronobusLine);
-
 let lastBusWayIndex = 0;
 let firstChronobusIndex = 0;
 let lastChronobusIndex = 0;
@@ -95,10 +93,7 @@ while (i < routes.length) {
   }
 
   i++;
-  console.log(lastBusWayIndex, firstChronobusIndex, lastChronobusIndex);
 }
-
-console.log(lastBusWayIndex, firstChronobusIndex, lastChronobusIndex);
 
 const firstLines = routes.slice(0, lastBusWayIndex + 1); // 'end' is not included, hence +1
 const classicBuses = routes.slice(lastBusWayIndex + 1, firstChronobusIndex); // from the first bus line to the first Chronobus line (excluded)
@@ -106,7 +101,6 @@ let chronobuses = routes.slice(firstChronobusIndex, lastChronobusIndex + 1); // 
 chronobuses.sort(sortChronobusLines);
 const lastLines = routes.slice(lastChronobusIndex + 1, routes.length); // last lines
 
-console.log(firstLines, classicBuses, chronobuses, lastLines);
 routes = firstLines.concat(chronobuses);
 routes = routes.concat(classicBuses);
 routes = routes.concat(lastLines);

@@ -8,10 +8,15 @@ import {
   View,
 } from "react-native";
 import Heading from "./components/heading";
-import ListOfLines from "./components/listOfLines";
 import HorizontalBar from "./components/horizontalBar";
+import ListOfStops from "./components/listOfStops";
+import ListOfLines from "./components/listOfLines";
+import { RFValue } from "react-native-responsive-fontsize";
+import CONSTANTS from "./components/constants";
 
-const paddingSides = 10;
+const PADDING_SIDES = CONSTANTS.PADDING_GLOBAL.SIDES;
+const PADDING_BORDER = CONSTANTS.PADDING_GLOBAL.BORDER;
+const FONT_VALUE = CONSTANTS.FONT_VALUES.SUBHEADING;
 
 export default function Main() {
   let statusBarStyle =
@@ -31,12 +36,17 @@ export default function Main() {
         showHideTransition={statusBarTransition} // Android
         hidden={statusBarIsHidden}
       />
-      <ScrollView style={styles.containerScrollView}>
+      <View style={styles.containerScrollView}>
         <Heading></Heading>
         <HorizontalBar paddingType={"paddingBottom"}></HorizontalBar>
-        {/* TODO: render selected component */}
-        <ListOfLines></ListOfLines>
-      </ScrollView>
+        <Text style={styles.pageHeading}>Arrêts</Text>
+        <HorizontalBar paddingType={"paddingBottom"}></HorizontalBar>
+        <ScrollView>
+          {/* TODO: render selected component */}
+          {/*<ListOfLines></ListOfLines>*/}
+          <ListOfStops></ListOfStops>
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -45,14 +55,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     alignItems: "left",
-    paddingTop: StatusBar.currentHeight, // TODO: replace it with the right prop for status bar
-    //paddingRight: paddingSides,
-    //alignItems: 'center',
-    //justifyContent: 'center',
+    paddingTop: StatusBar.currentHeight,
   },
   containerScrollView: {
     alignSelf: "stretch",
-    paddingLeft: paddingSides,
-    paddingRight: paddingSides,
+    paddingLeft: PADDING_SIDES,
+    paddingRight: PADDING_SIDES,
+  },
+  pageHeading: {
+    color: "black",
+    fontSize: RFValue(FONT_VALUE),
+    fontWeight: "bold",
+    paddingTop: PADDING_BORDER,
   },
 });

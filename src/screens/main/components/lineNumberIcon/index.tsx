@@ -1,34 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { ApiHelper } from "../../../../api/helper";
 import { RFValue } from "react-native-responsive-fontsize";
 import Constants from "../constants";
+import { LineNumberIconProps } from "../../../../types/props/LineNumberIconProps";
+import { RouteAttributes } from "../../../../types/RouteAttributes";
 
-export default function LineNumberIcon(props) {
-  /* props = {
-      line_number: string
-      isRatio1by1: boolean
-      iconTextSize: string ("small" | "big")
-      iconMaxHeight: ?number
-      iconMaxWidth: ?number
-  } */
-  const [line, setLine] = useState(undefined);
+const LineNumberIcon: React.FC<LineNumberIconProps> = (props) => {
+  const _emptyLine: RouteAttributes = {
+    route_id: "",
+    route_short_name: "",
+    route_long_name: "",
+    route_desc: "",
+    route_type: 0,
+    route_color: "",
+    route_text_color: "",
+  };
+  const [line, setLine] = React.useState<RouteAttributes>(_emptyLine);
 
-  const apiHelper = new ApiHelper();
+  const apiHelper: ApiHelper = new ApiHelper();
 
-  const route = props.line_number;
-  const isRatio1by1 = props.isRatio1by1;
+  const route: string = props.lineNumber;
+  const isRatio1by1: boolean = props.isRatio1by1;
 
   useEffect(() => {
-    const _routeAttrs = apiHelper.getRouteAttributesByLineNumber(route);
-    setLine(_routeAttrs);
+    const _line: RouteAttributes | undefined =
+      apiHelper.getRouteAttributesByLineNumber(route);
+    if (typeof _line === "undefined") return;
+    setLine(_line);
   }, []);
 
-  if (typeof line === "undefined" || line === {}) return null;
+  if (typeof line === "undefined" || line.route_id === "") return null;
 
-  const route_color = line["route_color"];
-  const route_text_color = line["route_text_color"];
-  const short_name = line["route_short_name"];
+  const route_color: string = line.route_color;
+  const route_text_color: string = line.route_text_color;
+  const short_name: string = line.route_short_name;
 
   return (
     <View
@@ -51,9 +57,7 @@ export default function LineNumberIcon(props) {
         style={{
           color: "#" + route_text_color,
           fontSize: RFValue(
-            Constants.FONT_VALUES.ICON_LINE_NUMBER[
-              props.iconTextSize === "small" ? "SMALL" : "LARGE"
-            ]
+            Constants.FONT_VALUES.ICON_LINE_NUMBER[props.iconTextSize]
           ),
           fontWeight: "bold",
         }}
@@ -63,13 +67,14 @@ export default function LineNumberIcon(props) {
       </Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   lineRouteNumber: {
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "stretch",
-    //height: 20,
   },
 });
+
+export default LineNumberIcon;

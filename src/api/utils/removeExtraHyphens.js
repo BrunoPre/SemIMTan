@@ -2,7 +2,7 @@
  * Use case: after JSON conversion, run it when a new version of the CSV files is published by TAN/NM
  * Run: `node <this_script>.js`
  */
-import { Api_constants } from "./assets/api_constants.js"; // static methods
+import { Api_constants } from "../assets/api_constants.ts"; // static methods
 
 const STOP_NAMES_WITH_HYPHEN = Api_constants.getStopNamesWithHyphen(); // array of {original: string, formatted: string} objects
 

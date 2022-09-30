@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   View,
+  StatusBarStyle,
 } from "react-native";
 import Heading from "./components/heading";
 import HorizontalBar from "./components/horizontalBar";
@@ -13,19 +14,21 @@ import ListOfStops from "./components/listOfStops";
 import ListOfLines from "./components/listOfLines";
 import { RFValue } from "react-native-responsive-fontsize";
 import CONSTANTS from "./components/constants";
+import { EmptyProps } from "../../types/props/EmptyProps";
+import { PaddingTypeValues } from "../../types/props/HorizontalBarProps";
 
-const PADDING_SIDES = CONSTANTS.PADDING_GLOBAL.SIDES;
-const PADDING_BORDER = CONSTANTS.PADDING_GLOBAL.BORDER;
-const FONT_VALUE = CONSTANTS.FONT_VALUES.SUBHEADING;
+const PADDING_SIDES: number = CONSTANTS.PADDING_GLOBAL.SIDES;
+const PADDING_BORDER: number = CONSTANTS.PADDING_GLOBAL.BORDER;
+const FONT_VALUE: number = CONSTANTS.FONT_VALUES.SUBHEADING;
 
-export default function Main() {
-  let statusBarStyle =
+const Main: React.FC<EmptyProps> = () => {
+  const statusBarStyle: StatusBarStyle =
     styles.containerSafeAreaView.backgroundColor === "white"
       ? "dark-content"
       : "light-content";
-  let statusBarTransition = "none"; // "fade" | "slide" ; iOS specific
-  let statusBarIsAnimated = true;
-  let statusBarIsHidden = false;
+  const statusBarTransition = "none"; // "fade" | "slide" ; iOS specific
+  const statusBarIsAnimated: boolean = true;
+  const statusBarIsHidden: boolean = false;
 
   return (
     <SafeAreaView style={styles.containerSafeAreaView}>
@@ -38,9 +41,13 @@ export default function Main() {
       />
       <View style={styles.containerScrollView}>
         <Heading></Heading>
-        <HorizontalBar paddingType={"paddingBottom"}></HorizontalBar>
+        <HorizontalBar
+          paddingType={PaddingTypeValues.paddingBottom}
+        ></HorizontalBar>
         <Text style={styles.pageHeading}>Arrêts</Text>
-        <HorizontalBar paddingType={"paddingBottom"}></HorizontalBar>
+        <HorizontalBar
+          paddingType={PaddingTypeValues.paddingBottom}
+        ></HorizontalBar>
         <ScrollView>
           {/* TODO: render selected component */}
           {/*<ListOfLines></ListOfLines>*/}
@@ -49,12 +56,11 @@ export default function Main() {
       </View>
     </SafeAreaView>
   );
-}
+};
 const styles = StyleSheet.create({
   containerSafeAreaView: {
     flex: 1,
     backgroundColor: "white",
-    alignItems: "left",
     paddingTop: StatusBar.currentHeight,
   },
   containerScrollView: {
@@ -69,3 +75,5 @@ const styles = StyleSheet.create({
     paddingTop: PADDING_BORDER,
   },
 });
+
+export default Main;

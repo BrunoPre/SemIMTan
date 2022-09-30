@@ -1,4 +1,6 @@
-export const ALL_STOPS_EXTRACT = [
+import { Stop } from "../../../types/Stop";
+
+export const ALL_STOPS_EXTRACT: Array<Stop> = [
   {
     codeLieu: "ABCH",
     libelle: "Abbé Chérel",

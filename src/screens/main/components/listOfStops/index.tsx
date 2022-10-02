@@ -14,7 +14,6 @@ import { RFValue } from "react-native-responsive-fontsize";
 import LineNumberIcon from "../lineNumberIcon";
 import { StopCardPropsType } from "../../../../types/props/StopCardProps";
 
-const PADDING_VALUE = CONSTANTS.PADDING_GLOBAL.SIDES;
 const FONT_VALUE = CONSTANTS.FONT_VALUES.TEXT;
 
 const ListOfStops: React.FC<EmptyProps> = () => {
@@ -25,7 +24,7 @@ const ListOfStops: React.FC<EmptyProps> = () => {
 
   /* retrieve all stops from OpenTAN API */
   const apiHelper: ApiHelper = new ApiHelper();
-  const MAX_NUMBER_STOPS: number = 10; // for dev purposes
+  //const MAX_NUMBER_STOPS: number = 10; // for dev purposes
   const getStops = async () =>
     apiHelper
       .getAllStops()
@@ -105,7 +104,6 @@ const ListOfStops: React.FC<EmptyProps> = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: PADDING_VALUE,
   },
 });
 

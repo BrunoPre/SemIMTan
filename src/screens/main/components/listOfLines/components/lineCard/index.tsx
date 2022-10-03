@@ -10,10 +10,6 @@ import {
   iconTextSizeValues,
   LineNumberIconProps,
 } from "../../../../../../types/props/LineNumberIconProps";
-import {
-  HorizontalBarProps,
-  PaddingTypeValues,
-} from "../../../../../../types/props/HorizontalBarProps";
 import CONSTANTS from "../../../constants";
 
 const PADDING_TOP_BOTTOM = CONSTANTS.PADDING_GLOBAL.BORDER;

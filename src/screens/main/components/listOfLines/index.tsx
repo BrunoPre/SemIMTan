@@ -10,16 +10,14 @@ const ListOfLines: React.FC<NSSProps<"ListOfLines">> = () => {
   const routes: Array<RouteAttributes> = apiHelper.getRoutes(); // array of objects
 
   // for Array.map
-  function buildLineCard(
-    routeAttrs: RouteAttributes,
-    index: number
-  ): JSX.Element {
-    return <LineCard key={index} {...routeAttrs}></LineCard>;
+  function buildLineCard(routeAttrs: RouteAttributes): JSX.Element {
+    return (
+      <LineCard key={routeAttrs.route_short_name} {...routeAttrs}></LineCard>
+    );
   }
 
   const routesToBeRendered: Array<JSX.Element> = routes.map(
-    (routeAttrs: RouteAttributes, index: number) =>
-      buildLineCard(routeAttrs, index)
+    (routeAttrs: RouteAttributes) => buildLineCard(routeAttrs)
   );
 
   return <ScrollView style={styles.container}>{routesToBeRendered}</ScrollView>;

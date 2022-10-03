@@ -14,8 +14,10 @@ import {
   HorizontalBarProps,
   PaddingTypeValues,
 } from "../../../../../../types/props/HorizontalBarProps";
+import CONSTANTS from "../../../constants";
 
-const PADDING_AROUND: number = Constants.PADDING_GLOBAL.SIDES;
+const PADDING_TOP_BOTTOM = CONSTANTS.PADDING_GLOBAL.BORDER;
+const PADDING_SIDES = CONSTANTS.PADDING_GLOBAL.SIDES;
 const FONT_VALUE: number = Constants.FONT_VALUES.TEXT;
 
 const LineCard: React.FC<LineCardProps> = (props: RouteAttributes) => {
@@ -29,14 +31,10 @@ const LineCard: React.FC<LineCardProps> = (props: RouteAttributes) => {
     iconTextSize: iconTextSizeValues.large,
   };
 
-  const _paddingTypeProp: HorizontalBarProps = {
-    paddingType: PaddingTypeValues.paddingBottom,
-  };
-
   return (
-    <View style={{ padding: PADDING_AROUND }}>
-      <TouchableOpacity>
-        <View style={styles.container}>
+    <View>
+      <TouchableOpacity style={styles.touchableContainer}>
+        <View style={styles.mainContainer}>
           <LineNumberIcon {..._propsLineNumberIcon}></LineNumberIcon>
 
           <View style={styles.lineRoute}>
@@ -44,12 +42,18 @@ const LineCard: React.FC<LineCardProps> = (props: RouteAttributes) => {
           </View>
         </View>
       </TouchableOpacity>
-      <HorizontalBar {..._paddingTypeProp}></HorizontalBar>
+      <HorizontalBar></HorizontalBar>
     </View>
   );
 };
 const styles = StyleSheet.create({
-  container: {
+  touchableContainer: {
+    paddingTop: PADDING_TOP_BOTTOM,
+    paddingBottom: PADDING_TOP_BOTTOM,
+    paddingLeft: PADDING_SIDES,
+    paddingRight: PADDING_SIDES,
+  },
+  mainContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
   },

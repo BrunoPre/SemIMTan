@@ -1,25 +1,21 @@
 import React from "react";
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  View,
-  StatusBarStyle,
-} from "react-native";
-import Heading from "./components/heading";
+import { StatusBar, StyleSheet, StatusBarStyle } from "react-native";
 import ListOfStops from "./components/listOfStops";
 import ListOfLines from "./components/listOfLines";
 import { RFValue } from "react-native-responsive-fontsize";
 import CONSTANTS from "./components/constants";
 import { EmptyProps } from "../../types/props/EmptyProps";
 import { i18N } from "../../utils/language.utils";
-import Banner from "./components/banner";
-import { BannerProps } from "../../types/props/BannerProps";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "./components/home";
+import { RootStackParamList } from "../../types/RootStackParamList";
 
 const PADDING_SIDES: number = CONSTANTS.PADDING_GLOBAL.SIDES;
 const PADDING_BORDER: number = CONSTANTS.PADDING_GLOBAL.BORDER;
 const FONT_VALUE: number = CONSTANTS.FONT_VALUES.SUBHEADING;
+
+const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const Main: React.FC<EmptyProps> = () => {
   const statusBarStyle: StatusBarStyle =
@@ -31,7 +27,7 @@ const Main: React.FC<EmptyProps> = () => {
   const statusBarIsHidden: boolean = false;
 
   return (
-    <SafeAreaView style={styles.containerSafeAreaView}>
+    <NavigationContainer>
       <StatusBar
         animated={statusBarIsAnimated}
         backgroundColor="black" // Android
@@ -39,18 +35,25 @@ const Main: React.FC<EmptyProps> = () => {
         showHideTransition={statusBarTransition} // Android
         hidden={statusBarIsHidden}
       />
-      <View style={styles.containerScrollView}>
-        <Heading></Heading>
-        <Banner
-          {...({ bannerTitle: i18N.t("STOPS_title") } as BannerProps)}
-        ></Banner>
-        <ScrollView>
-          {/* TODO: render selected component */}
-          {/*<ListOfLines></ListOfLines>*/}
-          <ListOfStops></ListOfStops>
-        </ScrollView>
-      </View>
-    </SafeAreaView>
+      <RootStack.Navigator initialRouteName={"Home"}>
+        <RootStack.Screen
+          name={"Home"}
+          component={Home}
+          options={{ title: i18N.t("HOME_title") }}
+        />
+
+        <RootStack.Screen
+          name={"ListOfLines"}
+          component={ListOfLines}
+          options={{ title: i18N.t("LINES_title") }}
+        />
+        <RootStack.Screen
+          name={"ListOfStops"}
+          component={ListOfStops}
+          options={{ title: i18N.t("STOPS_title") }}
+        />
+      </RootStack.Navigator>
+    </NavigationContainer>
   );
 };
 const styles = StyleSheet.create({

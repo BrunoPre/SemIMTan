@@ -1,14 +1,11 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import LineCard from "./components/lineCard";
-import CONSTANTS from "../constants";
 import { ApiHelper } from "../../../../api/helper";
-import { EmptyProps } from "../../../../types/props/EmptyProps";
 import { RouteAttributes } from "../../../../types/RouteAttributes";
+import { NSSProps } from "../../../../types/NSSProps";
 
-const paddingValue: number = CONSTANTS.PADDING_GLOBAL.SIDES;
-
-const ListOfLines: React.FC<EmptyProps> = () => {
+const ListOfLines: React.FC<NSSProps<"ListOfLines">> = () => {
   const apiHelper: ApiHelper = new ApiHelper();
   const routes: Array<RouteAttributes> = apiHelper.getRoutes(); // array of objects
 
@@ -25,13 +22,12 @@ const ListOfLines: React.FC<EmptyProps> = () => {
       buildLineCard(routeAttrs, index)
   );
 
-  return <View style={styles.container}>{routesToBeRendered}</View>;
+  return <ScrollView style={styles.container}>{routesToBeRendered}</ScrollView>;
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: paddingValue,
   },
 });
 

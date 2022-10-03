@@ -1,4 +1,8 @@
 {
+  "HOME_title": {
+    "en": "Home",
+    "fr": "Accueil"
+  },
   "STOPS_title" : {
     "en": "Stops",
     "fr": "Arrêts"

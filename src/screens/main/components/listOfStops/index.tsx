@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import CONSTANTS from "../constants";
 import StopCard from "./components/stopCard";
 import { ApiHelper } from "../../../../api/helper";
-import { EmptyProps } from "../../../../types/props/EmptyProps";
 import { LineNumber, Stop } from "../../../../types/Stop";
 import { RouteAttributes } from "../../../../types/RouteAttributes";
 import {
@@ -13,10 +12,11 @@ import {
 import { RFValue } from "react-native-responsive-fontsize";
 import LineNumberIcon from "../lineNumberIcon";
 import { StopCardPropsType } from "../../../../types/props/StopCardProps";
+import { NSSProps } from "../../../../types/NSSProps";
 
 const FONT_VALUE = CONSTANTS.FONT_VALUES.TEXT;
 
-const ListOfStops: React.FC<EmptyProps> = () => {
+const ListOfStops: React.FC<NSSProps<"ListOfStops">> = () => {
   const [allStops, setAllStops] = useState([] as Array<Stop>);
   const [allLineNumberCards, setAllLineNumberCards] = useState(
     new Map<string, JSX.Element>()
@@ -98,7 +98,9 @@ const ListOfStops: React.FC<EmptyProps> = () => {
     buildStopCard(stop)
   );
 
-  return <View style={styles.container}>{stopCardsToBeRendered}</View>;
+  return (
+    <ScrollView style={styles.container}>{stopCardsToBeRendered}</ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({

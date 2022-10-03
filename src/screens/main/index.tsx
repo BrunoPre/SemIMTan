@@ -4,19 +4,18 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   View,
   StatusBarStyle,
 } from "react-native";
 import Heading from "./components/heading";
-import HorizontalBar from "./components/horizontalBar";
 import ListOfStops from "./components/listOfStops";
 import ListOfLines from "./components/listOfLines";
 import { RFValue } from "react-native-responsive-fontsize";
 import CONSTANTS from "./components/constants";
 import { EmptyProps } from "../../types/props/EmptyProps";
-import { PaddingTypeValues } from "../../types/props/HorizontalBarProps";
 import { i18N } from "../../utils/language.utils";
+import Banner from "./components/banner";
+import { BannerProps } from "../../types/props/BannerProps";
 
 const PADDING_SIDES: number = CONSTANTS.PADDING_GLOBAL.SIDES;
 const PADDING_BORDER: number = CONSTANTS.PADDING_GLOBAL.BORDER;
@@ -42,13 +41,9 @@ const Main: React.FC<EmptyProps> = () => {
       />
       <View style={styles.containerScrollView}>
         <Heading></Heading>
-        <HorizontalBar
-          paddingType={PaddingTypeValues.paddingBottom}
-        ></HorizontalBar>
-        <Text style={styles.pageHeading}>{i18N.t("STOPS_title")}</Text>
-        <HorizontalBar
-          paddingType={PaddingTypeValues.paddingBottom}
-        ></HorizontalBar>
+        <Banner
+          {...({ bannerTitle: i18N.t("STOPS_title") } as BannerProps)}
+        ></Banner>
         <ScrollView>
           {/* TODO: render selected component */}
           {/*<ListOfLines></ListOfLines>*/}

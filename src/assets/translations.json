@@ -7,8 +7,24 @@
     "en": "Stops",
     "fr": "Arrêts"
   },
+  "STOPS_singular_label": {
+    "en": "Stop",
+    "fr": "Arrêt"
+  },
+  "STOPS_plural_label": {
+    "en": "Stops",
+    "fr": "Arrêts"
+  },
   "LINES_title": {
     "en": "Lines",
     "fr": "Lignes"
+  },
+  "LINES_singular_label": {
+    "en": "Line",
+    "fr" : "Ligne"
+  },
+  "LINES_plural_label": {
+    "en": "Lines",
+    "fr" : "Lignes"
   }
 }

@@ -11,6 +11,7 @@ import {
   LineNumberIconProps,
 } from "../../../../../../types/props/LineNumberIconProps";
 import CONSTANTS from "../../../constants";
+import { i18N } from "../../../../../../utils/language.utils";
 
 const PADDING_TOP_BOTTOM = CONSTANTS.PADDING_GLOBAL.BORDER;
 const PADDING_SIDES = CONSTANTS.PADDING_GLOBAL.SIDES;
@@ -27,9 +28,28 @@ const LineCard: React.FC<LineCardProps> = (props: RouteAttributes) => {
     iconTextSize: iconTextSizeValues.large,
   };
 
+  const getAccessibilityLabel = () => {
+    const lineLabel: string = i18N.t("LINES_singular_label");
+    const lineNumber: string = _propsLineNumberIcon.lineNumber;
+    return (
+      lineLabel +
+      " " +
+      lineNumber +
+      " " +
+      long_name_splitted[0] +
+      " " +
+      long_name_splitted[1]
+    );
+  };
+
   return (
     <View>
-      <TouchableOpacity style={styles.touchableContainer}>
+      <TouchableOpacity
+        accessible={true}
+        accessibilityLabel={getAccessibilityLabel()}
+        accessibilityRole={"button"}
+        style={styles.touchableContainer}
+      >
         <View style={styles.mainContainer}>
           <LineNumberIcon {..._propsLineNumberIcon}></LineNumberIcon>
 

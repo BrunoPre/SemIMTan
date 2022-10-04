@@ -8,6 +8,7 @@ import {
   StopCardPropsType,
 } from "../../../../../../types/props/StopCardProps";
 import { LineNumber, Stop } from "../../../../../../types/Stop";
+import { i18N } from "../../../../../../utils/language.utils";
 
 const FONT_VALUE = CONSTANTS.FONT_VALUES.TEXT;
 const PADDING_TOP_BOTTOM = CONSTANTS.PADDING_GLOBAL.BORDER;
@@ -23,9 +24,29 @@ const StopCard: React.FC<StopCardProps> = (props: StopCardPropsType) => {
   /* avoid unused stops */
   if (linesAvailable.length === 0) return null;
 
+  /* build accessibilityLabel */
+  const getAccessibilityLabel = () => {
+    const linesLabel: string = i18N.t(
+      "LINES_" +
+        (linesAvailable.length === 1 ? "singular" : "plural") +
+        "_label"
+    );
+    const linesPhrase: string = linesAvailable.reduce(
+      (linesPhrase: string, lineNumber: LineNumber) =>
+        linesPhrase + lineNumber.numLigne,
+      ""
+    );
+    return stopName + " " + linesLabel + " " + linesPhrase;
+  };
+
   return (
     <View>
-      <TouchableOpacity style={styles.touchableContainer}>
+      <TouchableOpacity
+        accessible={true}
+        accessibilityLabel={getAccessibilityLabel()}
+        accessibilityRole={"button"}
+        style={styles.touchableContainer}
+      >
         <View style={styles.mainContainer}>
           <View style={styles.stopName}>
             <Text style={{ fontSize: RFValue(FONT_VALUE) }}>{stopName}</Text>

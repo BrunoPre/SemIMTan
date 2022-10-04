@@ -7,15 +7,15 @@ import CONSTANTS from "./components/constants";
 import { EmptyProps } from "../../types/props/EmptyProps";
 import { i18N } from "../../utils/language.utils";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./components/home";
 import { RootStackParamList } from "../../types/RootStackParamList";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const PADDING_SIDES: number = CONSTANTS.PADDING_GLOBAL.SIDES;
 const PADDING_BORDER: number = CONSTANTS.PADDING_GLOBAL.BORDER;
 const FONT_VALUE: number = CONSTANTS.FONT_VALUES.SUBHEADING;
 
-const RootStack = createNativeStackNavigator<RootStackParamList>();
+const RootStack = createDrawerNavigator<RootStackParamList>();
 
 const Main: React.FC<EmptyProps> = () => {
   const statusBarStyle: StatusBarStyle =

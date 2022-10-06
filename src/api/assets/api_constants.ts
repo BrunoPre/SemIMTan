@@ -1,7 +1,9 @@
+import { HyphenedStopName } from "../../types/HyphenedStopName";
+
 export class Api_constants {
   static getStopNamesWithHyphen = () => this.STOP_NAMES_WITH_HYPHEN;
 
-  static STOP_NAMES_WITH_HYPHEN = [
+  static STOP_NAMES_WITH_HYPHEN: Array<HyphenedStopName> = [
     {
       original: "Foch - Cathédrale",
       formatted: "Foch-Cathédrale",

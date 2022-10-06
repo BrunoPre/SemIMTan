@@ -8,6 +8,7 @@
  *     "route_type": 3,
  *     "route_color": "77ad1c",
  *     "route_text_color": "ffffff"
+ *     "route_sort_order": 52
  *   },
  * ```
  */
@@ -19,4 +20,5 @@ export interface RouteAttributes {
   route_type: number;
   route_color: string;
   route_text_color: string;
+  route_sort_order: number;
 }

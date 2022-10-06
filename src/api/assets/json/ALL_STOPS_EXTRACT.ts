@@ -62,6 +62,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "101",
       },
       {
+        numLigne: "141",
+      },
+      {
         numLigne: "91",
       },
       {
@@ -386,6 +389,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     distance: null,
     ligne: [
       {
+        numLigne: "85",
+      },
+      {
         numLigne: "95",
       },
     ],
@@ -431,6 +437,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     distance: null,
     ligne: [
       {
+        numLigne: "85",
+      },
+      {
         numLigne: "95",
       },
     ],
@@ -472,6 +481,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       {
         numLigne: "85",
       },
+      {
+        numLigne: "95",
+      },
     ],
   },
   {
@@ -497,6 +509,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ligne: [
       {
         numLigne: "50",
+      },
+      {
+        numLigne: "93",
       },
       {
         numLigne: "C3",
@@ -632,6 +647,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       {
         numLigne: "38",
       },
+      {
+        numLigne: "3B",
+      },
     ],
   },
   {
@@ -676,6 +694,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ligne: [
       {
         numLigne: "36",
+      },
+      {
+        numLigne: "3B",
       },
       {
         numLigne: "78",
@@ -807,6 +828,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "C1",
+      },
+      {
+        numLigne: "C20",
       },
       {
         numLigne: "LO",
@@ -1276,6 +1300,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "81",
       },
       {
+        numLigne: "C20",
+      },
+      {
         numLigne: "LO",
       },
     ],
@@ -1310,6 +1337,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ligne: [
       {
         numLigne: "75",
+      },
+      {
+        numLigne: "85",
       },
       {
         numLigne: "95",
@@ -1632,6 +1662,19 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ],
   },
   {
+    codeLieu: "BNDA",
+    libelle: "Brindais",
+    distance: null,
+    ligne: [
+      {
+        numLigne: "108",
+      },
+      {
+        numLigne: "98",
+      },
+    ],
+  },
+  {
     codeLieu: "BNET",
     libelle: "Bignonnet",
     distance: null,
@@ -1805,6 +1848,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "148",
+      },
+      {
+        numLigne: "E8",
       },
     ],
   },
@@ -2022,6 +2068,22 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ],
   },
   {
+    codeLieu: "BRLN",
+    libelle: "Berlin",
+    distance: null,
+    ligne: [
+      {
+        numLigne: "5",
+      },
+      {
+        numLigne: "C3",
+      },
+      {
+        numLigne: "LS",
+      },
+    ],
+  },
+  {
     codeLieu: "BRNI",
     libelle: "Baronnière",
     distance: null,
@@ -2199,6 +2261,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       {
         numLigne: "85",
       },
+      {
+        numLigne: "95",
+      },
     ],
   },
   {
@@ -2324,6 +2389,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     distance: null,
     ligne: [
       {
+        numLigne: "135",
+      },
+      {
         numLigne: "87",
       },
     ],
@@ -2442,6 +2510,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "85",
+      },
+      {
+        numLigne: "95",
       },
       {
         numLigne: "E5",
@@ -2563,6 +2634,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "85",
       },
       {
+        numLigne: "95",
+      },
+      {
         numLigne: "E5",
       },
     ],
@@ -2651,6 +2725,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "85",
+      },
+      {
+        numLigne: "95",
       },
       {
         numLigne: "E5",
@@ -2982,6 +3059,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ligne: [
       {
         numLigne: "128",
+      },
+      {
+        numLigne: "E8",
       },
     ],
   },
@@ -3526,6 +3606,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "81",
       },
       {
+        numLigne: "C20",
+      },
+      {
         numLigne: "LO",
       },
     ],
@@ -3698,6 +3781,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "3",
+      },
+      {
+        numLigne: "3B",
       },
     ],
   },
@@ -4052,6 +4138,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "3",
+      },
+      {
+        numLigne: "3B",
       },
     ],
   },
@@ -4679,6 +4768,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     distance: null,
     ligne: [
       {
+        numLigne: "85",
+      },
+      {
         numLigne: "95",
       },
     ],
@@ -4796,6 +4888,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "33",
+      },
+      {
+        numLigne: "3B",
       },
       {
         numLigne: "LS",
@@ -5003,6 +5098,15 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "137",
+      },
+      {
+        numLigne: "147",
+      },
+      {
+        numLigne: "157",
+      },
+      {
+        numLigne: "87",
       },
     ],
   },
@@ -5573,6 +5677,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "139",
       },
       {
+        numLigne: "149",
+      },
+      {
         numLigne: "159",
       },
       {
@@ -5699,6 +5806,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ligne: [
       {
         numLigne: "75",
+      },
+      {
+        numLigne: "85",
       },
       {
         numLigne: "95",
@@ -6295,6 +6405,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       {
         numLigne: "3",
       },
+      {
+        numLigne: "3B",
+      },
     ],
   },
   {
@@ -6596,6 +6709,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "81",
+      },
+      {
+        numLigne: "C20",
       },
       {
         numLigne: "E1",
@@ -7442,6 +7558,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       {
         numLigne: "85",
       },
+      {
+        numLigne: "95",
+      },
     ],
   },
   {
@@ -7479,6 +7598,16 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "95",
+      },
+    ],
+  },
+  {
+    codeLieu: "ICOU",
+    libelle: "ICO",
+    distance: null,
+    ligne: [
+      {
+        numLigne: "93",
       },
     ],
   },
@@ -7553,6 +7682,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "131",
       },
       {
+        numLigne: "81",
+      },
+      {
         numLigne: "91",
       },
       {
@@ -7597,6 +7729,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     libelle: "IUT",
     distance: null,
     ligne: [
+      {
+        numLigne: "85",
+      },
       {
         numLigne: "95",
       },
@@ -8354,6 +8489,16 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ],
   },
   {
+    codeLieu: "LBUS",
+    libelle: "Les Buissons",
+    distance: null,
+    ligne: [
+      {
+        numLigne: "135",
+      },
+    ],
+  },
+  {
     codeLieu: "LCAR",
     libelle: "Le Cardo",
     distance: null,
@@ -8589,6 +8734,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ligne: [
       {
         numLigne: "139",
+      },
+      {
+        numLigne: "141",
       },
       {
         numLigne: "149",
@@ -8892,6 +9040,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
       },
       {
         numLigne: "169",
+      },
+      {
+        numLigne: "3B",
       },
       {
         numLigne: "69",
@@ -10211,6 +10362,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     distance: null,
     ligne: [
       {
+        numLigne: "172",
+      },
+      {
         numLigne: "42",
       },
     ],
@@ -10626,6 +10780,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "30",
       },
       {
+        numLigne: "3B",
+      },
+      {
         numLigne: "LS",
       },
     ],
@@ -10998,6 +11155,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "36",
       },
       {
+        numLigne: "3B",
+      },
+      {
         numLigne: "40",
       },
       {
@@ -11016,6 +11176,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     libelle: "Niagara",
     distance: null,
     ligne: [
+      {
+        numLigne: "85",
+      },
       {
         numLigne: "95",
       },
@@ -12758,6 +12921,15 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "137",
       },
       {
+        numLigne: "147",
+      },
+      {
+        numLigne: "157",
+      },
+      {
+        numLigne: "87",
+      },
+      {
         numLigne: "C7",
       },
     ],
@@ -13813,6 +13985,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     distance: null,
     ligne: [
       {
+        numLigne: "85",
+      },
+      {
         numLigne: "95",
       },
     ],
@@ -14203,6 +14378,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "169",
       },
       {
+        numLigne: "3B",
+      },
+      {
         numLigne: "69",
       },
     ],
@@ -14329,6 +14507,12 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ligne: [
       {
         numLigne: "75",
+      },
+      {
+        numLigne: "85",
+      },
+      {
+        numLigne: "95",
       },
       {
         numLigne: "E5",
@@ -14671,6 +14855,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
         numLigne: "81",
       },
       {
+        numLigne: "C20",
+      },
+      {
         numLigne: "LO",
       },
     ],
@@ -14771,6 +14958,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     distance: null,
     ligne: [
       {
+        numLigne: "85",
+      },
+      {
         numLigne: "95",
       },
     ],
@@ -14780,6 +14970,9 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     libelle: "Souchais École",
     distance: null,
     ligne: [
+      {
+        numLigne: "85",
+      },
       {
         numLigne: "95",
       },
@@ -14844,6 +15037,16 @@ export const ALL_STOPS_EXTRACT: Array<Stop> = [
     ligne: [
       {
         numLigne: "54",
+      },
+    ],
+  },
+  {
+    codeLieu: "SPLO",
+    libelle: "Ste-Philomène",
+    distance: null,
+    ligne: [
+      {
+        numLigne: "141",
       },
     ],
   },

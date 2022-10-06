@@ -61,8 +61,12 @@ export class ApiHelper {
         else console.error("getAllStops() failed with error: ", err);
 
         /* FALLBACK to JSON extract */
-        return ALL_STOPS_EXTRACT;
+        return this.getAllStopsExtract();
       });
+  }
+
+  async getAllStopsExtract(): Promise<Array<Stop>> {
+    return ALL_STOPS_EXTRACT;
   }
 
   /**

@@ -22,3 +22,14 @@ export interface RouteAttributes {
   route_text_color: string;
   route_sort_order: number;
 }
+
+export const EMPTY_ROUTE = {
+  route_id: "",
+  route_short_name: "",
+  route_long_name: "",
+  route_desc: "",
+  route_type: -1,
+  route_color: "",
+  route_text_color: "",
+  route_sort_order: -1,
+} as RouteAttributes;

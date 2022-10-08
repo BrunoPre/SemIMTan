@@ -18,19 +18,20 @@ const PADDING_SIDES = CONSTANTS.PADDING_GLOBAL.SIDES;
 const FONT_VALUE: number = Constants.FONT_VALUES.TEXT;
 
 const LineCard: React.FC<LineCardProps> = (props: RouteAttributes) => {
+  const line: RouteAttributes = props;
   const long_name_splitted: string[] = props.route_long_name.split(" - "); // remove annoying hyphen between the final stops
   const long_name: string =
     long_name_splitted[0] + "\n" + long_name_splitted[1];
 
   const _propsLineNumberIcon: LineNumberIconProps = {
-    lineNumber: props.route_short_name,
     isRatio1by1: true,
     iconTextSize: iconTextSizeValues.large,
+    routeAttrs: line,
   };
 
   const getAccessibilityLabel = () => {
     const lineLabel: string = i18N.t("LINES_singular_label");
-    const lineNumber: string = _propsLineNumberIcon.lineNumber;
+    const lineNumber: string = line.route_short_name;
     return (
       lineLabel +
       " " +

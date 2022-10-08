@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import HorizontalBar from "../../../horizontalBar";
+import HorizontalBar from "../../../horizontalBar/HorizontalBar";
 import CONSTANTS from "../../../constants";
 import { RFValue } from "react-native-responsive-fontsize";
 import {

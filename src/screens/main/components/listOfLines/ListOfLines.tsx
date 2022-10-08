@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
-import LineCard from "./components/lineCard";
+import LineCard from "./components/lineCard/LineCard";
 import { ApiHelper } from "../../../../api/helper";
 import { RouteAttributes } from "../../../../types/RouteAttributes";
 import { NSSProps } from "../../../../types/NSSProps";

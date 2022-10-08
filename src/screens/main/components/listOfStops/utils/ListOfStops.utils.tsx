@@ -7,11 +7,11 @@ import {
   iconTextSizeValues,
   LineNumberIconProps,
 } from "../../../../../types/props/LineNumberIconProps";
-import LineNumberIcon from "../../lineNumberIcon";
+import LineNumberIcon from "../../lineNumberIcon/LineNumberIcon";
 import React from "react";
 import { LineNumber, Stop } from "../../../../../types/Stop";
 import { StopCardPropsType } from "../../../../../types/props/StopCardProps";
-import StopCard from "../components/stopCard";
+import StopCard from "../components/stopCard/StopCard";
 import { ApiHelper } from "../../../../../api/helper";
 import CONSTANTS from "../../constants";
 

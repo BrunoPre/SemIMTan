@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import HorizontalBar from "../../../horizontalBar";
-import LineNumberIcon from "../../../lineNumberIcon";
+import HorizontalBar from "../../../horizontalBar/HorizontalBar";
+import LineNumberIcon from "../../../lineNumberIcon/LineNumberIcon";
 import Constants from "../../../constants";
 import { RFValue } from "react-native-responsive-fontsize";
 import { LineCardProps } from "../../../../../../types/props/LineCardProps";

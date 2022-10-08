@@ -1,6 +1,6 @@
 import React from "react";
 import { BannerProps } from "../../../../types/props/BannerProps";
-import HorizontalBar from "../horizontalBar";
+import HorizontalBar from "../horizontalBar/HorizontalBar";
 import { PaddingTypeValues } from "../../../../types/props/HorizontalBarProps";
 import { StyleSheet, Text, View } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";

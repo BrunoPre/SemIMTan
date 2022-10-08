@@ -1,13 +1,13 @@
 import React from "react";
 import { StatusBar, StyleSheet, StatusBarStyle } from "react-native";
-import ListOfStops from "./components/listOfStops";
-import ListOfLines from "./components/listOfLines";
+import ListOfStops from "./components/listOfStops/ListOfStops";
+import ListOfLines from "./components/listOfLines/ListOfLines";
 import { RFValue } from "react-native-responsive-fontsize";
 import CONSTANTS from "./components/constants";
 import { EmptyProps } from "../../types/props/EmptyProps";
 import { i18N } from "../../utils/language.utils";
 import { NavigationContainer } from "@react-navigation/native";
-import Home from "./components/home";
+import Home from "./components/home/Home";
 import { RootStackParamList } from "../../types/RootStackParamList";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 

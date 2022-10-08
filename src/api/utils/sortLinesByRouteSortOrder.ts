@@ -6,7 +6,7 @@
  * * Chronobus linus Cx (x is 1-or-2-digit integer)
  * * the other lines (bus, night buses, Navibus boats, and so on)
  *
- * Run: `node <this_script>.ts`
+ * Run: `ts-node <this_script>.ts`
  */
 
 import * as fs from "fs";

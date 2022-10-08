@@ -1,9 +1,9 @@
 import { RouteAttributes } from "../types/RouteAttributes";
 
-const _routes = require("./assets/json/routes.json");
+const _routes: Array<RouteAttributes> = require("./assets/json/routes.json");
 import { Api_constants } from "./assets/api_constants"; // static methods
 import { Stop } from "../types/Stop";
-import { ALL_STOPS_EXTRACT } from "./assets/json/ALL_STOPS_EXTRACT";
+const ALL_STOPS_EXTRACT: Array<Stop> = require("./assets/json/ALL_STOPS_EXTRACT.json");
 const BASE_URL = "http://open.tan.fr/";
 
 export class ApiHelper {
@@ -61,11 +61,11 @@ export class ApiHelper {
         else console.error("getAllStops() failed with error: ", err);
 
         /* FALLBACK to JSON extract */
-        return this.getAllStopsExtract();
+        return Promise.resolve(this.getAllStopsExtract());
       });
   }
 
-  async getAllStopsExtract(): Promise<Array<Stop>> {
+  getAllStopsExtract(): Array<Stop> {
     return ALL_STOPS_EXTRACT;
   }
 
@@ -81,6 +81,7 @@ export class ApiHelper {
    *     "route_type": 3,
    *     "route_color": "77ad1c",
    *     "route_text_color": "ffffff"
+   *     "route_sort_order": 312
    *   },
    * ```
    */

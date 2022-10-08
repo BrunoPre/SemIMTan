@@ -1,6 +1,6 @@
 /** Utility script to format TAN's stop names by removing extra hyphens on nouns.
  * Use case: after JSON conversion, run it when a new version of the CSV files is published by TAN/NM
- * Run: `node <this_script>.ts`
+ * Run: `ts-node <this_script>.ts`
  */
 import { Api_constants } from "../assets/api_constants"; // static methods
 import * as fs from "fs";

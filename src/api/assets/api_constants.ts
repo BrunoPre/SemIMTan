@@ -1,4 +1,5 @@
 import { HyphenedStopName } from "../../types/HyphenedStopName";
+import { RouteAttributes } from "../../types/RouteAttributes";
 
 export class Api_constants {
   static getStopNamesWithHyphen = () => this.STOP_NAMES_WITH_HYPHEN;
@@ -27,6 +28,29 @@ export class Api_constants {
     {
       original: "Trentemoult - Roquios",
       formatted: "Trentemoult-Roquios",
+    },
+  ];
+
+  static UNACTIVE_ROUTES: Array<RouteAttributes> = [
+    {
+      route_id: "1B-0",
+      route_short_name: "1B",
+      route_long_name: "François Mitterrand / Jamet - Beaujoire / Ranzay", // not sure
+      route_desc: "",
+      route_type: 3,
+      route_color: "007a45",
+      route_text_color: "ffffff",
+      route_sort_order: 2,
+    },
+    {
+      route_id: "2B-0",
+      route_short_name: "2B",
+      route_long_name: "Orvault Grand Val - Gare de Pont Rousseau", // not sure
+      route_desc: "",
+      route_type: 3,
+      route_color: "e53138",
+      route_text_color: "ffffff",
+      route_sort_order: 4,
     },
   ];
 }
